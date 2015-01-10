@@ -1,0 +1,260 @@
+﻿body.bodyECommRedirect
+{
+    background: Gray;
+    font-size: .80em;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    margin: 0 auto;
+    padding: 0px;
+    color: Red;
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/SandBox/background.jpg');
+}
+
+.divTotalDefault
+{
+    background-color: #9BB4D8;
+    border-radius: 40px;
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #9BB4D8 100%);
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #9BB4D8 100%);
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #9BB4D8 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #9BB4D8));
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #9BB4D8 100%);
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #9BB4D8 100%);
+    text-align: center;
+}
+.lblFooter
+{
+    color: White;
+    font-size: x-small;
+    margin-top: 10px;
+}
+.txtCustom
+{
+    border-radius: 30px;
+}
+.watermarkCustom
+{
+    border-radius: 30px;
+}
+.lblDefault
+{
+    color: White;
+    font-style: italic;
+}
+.lblHeader
+{
+    color: White;
+    font-style: italic;
+}
+#popup_container input:hover
+{
+    background-color: #FaFaFa;
+    border-radius: 3px;
+    color: #777777;
+    box-sizing: border-box;
+    border: 1px solid Yellow;
+}
+#popup_container
+{
+    border-radius: 30px;
+}
+#btnPayment
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/submit.png');
+    background-repeat: no-repeat;
+    font-size: 1px;
+    background-color: transparent;
+    border: none;
+    width: 150px;
+    height: 30px;
+    color: White;
+    padding-top: 30px;
+}
+#btnCancel
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/cancel.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    font-size: 1px;
+    width: 150px;
+    height: 30px;
+    color: White;
+    padding-top: 30px;
+}
+body.bodyECommIFrame
+{
+    background: Maroon;
+    font-size: .80em;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: Red;
+}
+.divTotalIFrameDefault
+{
+    background-color: #eeaaff;
+}
+body.bodyMobile
+{
+    background-color: #ffffaa;
+    color: Fuchsia;
+}
+.divTotalMobileDefault
+{
+    background-color: Yellow;
+}
+#divUserInputPOS
+{
+    background: #aaffaa;
+    margin-left: 100px;
+}
+.divTotalPOSIFrameDefault
+{
+    background-color: #ffcccc;
+}
+.lblDefaultPOS
+{
+    font-size: large;
+    color: Green;
+}
+.btnKeypad
+{
+    width: 60px;
+    height: 60px;
+    font-size: large;
+    background-color: Fuchsia;
+}
+#uctlKeyPad_btn1
+{
+    position: fixed;
+    margin: 408px -880px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn2
+{
+    position: fixed;
+    margin: 408px -820px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn3
+{
+    position: fixed;
+    margin: 408px -760px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn4
+{
+    position: fixed;
+    margin: 413px -685px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn5
+{
+    position: fixed;
+    margin: 413px -625px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn6
+{
+    position: fixed;
+    margin: 413px -565px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn7
+{
+    position: fixed;
+    margin: 418px -485px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn8
+{
+    position: fixed;
+    margin: 418px -425px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn9
+{
+    position: fixed;
+    margin: 418px -365px;
+    border-radius: 30px;
+}
+#uctlKeyPad_btn0
+{
+    position: fixed;
+    margin: 403px -285px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #7777FF;
+}
+#uctlKeyPad_btnErase
+{
+    position: fixed;
+    margin: 403px -220px;
+    background-color: Lime;
+}
+#keypadContainer
+{
+    background-color: White;
+    border: none;
+}
+.divTotalPOSDefault
+{
+    background-color: Orange;
+    width: 370px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 30px;
+    position: fixed;
+    top: 200px;
+    left: 50px;
+}
+.divKeypadAddCard
+{
+    padding-top: 0;
+    margin-top: -100px;
+}
+.radioButtonSelected
+{
+    color: Maroon;
+    font-size: large;
+}
+.radioButtonDefault
+{
+    color: #cccccc;
+    font-size: medium;
+}
+#divButtonsPOS
+{
+    margin-top: -300px;
+    position: absolute;
+    left: 0px;
+}
+#divCardNumber
+{
+    margin-left: 100px;
+}
+#divCardSwipe
+{
+    margin-left: 100px;
+}
+#divExpDate
+{
+    margin-left: 50px;
+}
+.btnDisabledPOS
+{
+    padding: 5px 12px 5px 10px;
+    font-size: 1.7em;
+    background-color: Yellow;
+    color: Red;
+}
+a:hover
+{
+    background-color: Lime;
+    font-size: large;
+}

@@ -1,0 +1,282 @@
+﻿/***********************************************************/
+/*         CUSTOM STYLES FOR REDIRECT PAGES
+/----------------------------------------------------------*/
+
+/* main body for redirect pages */
+body.bodyECommRedirect
+{
+    background-color: #a3221c;        
+}
+
+/* header image using CSS */
+#divHeaderImage
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/DgoPizzaHeader.jpg.gif');
+    background-repeat: repeat-x;
+    height: 150px;
+}
+
+/* Credit card logos are hidden with display:none */
+#divJCB
+{
+    display: none;
+}
+
+/* image can actually be put behind any div */
+.divTotalDefault
+{    
+    background-image:url('http://localhost:4307/HostedCheckout.CSharp/Images/background2.png');
+    background-repeat: repeat;
+    text-align: center;
+}
+
+
+/* style for all of the textboxes */
+.txtCustom
+{
+    border-radius: 30px;   /* gives a rounding effect.  Not supported by IE8, will just look square */
+}
+
+/* this is the styling for all of the textboxes when they are in the inactive state */
+.watermarkCustom
+{
+    background-color: #c9c7b8;
+    border-radius: 30px;   /* border-radius for watermarks need to match the textboxes, or inactive textbox will be 'square' */
+}
+
+/* style for all of the labels on eCommm redirect pages */
+.lblDefault
+{
+    color: White;
+    font-style: italic;
+    font-size: medium;
+}
+
+/* the 'Enter Credit Card Information' header */
+.lblHeader
+{
+    color: White;
+    font-style: italic;
+    font-size: x-large;
+}
+
+/* Order Total & Amount */
+.lblTotalAmount
+{
+    color: Black;
+    font-size: xx-large;
+}
+
+/************************************************************/
+/* CUSTOM STYLES FOR IFRAME PAGES                           */
+/************************************************************/
+
+/* styling for main body of iFrame pages */
+ body.bodyECommIFrame
+{
+    background-color: #a3221c  ;
+    font-size: .70em;
+    font-family:  Arial;
+    margin: 0px;
+    padding: 0px;
+    color: Red;
+}
+
+/* styling for the total amount box at top of iFrame pages */
+.divTotalIFrameDefault
+{
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+} 
+
+/* Use display:none to hide the security logo */
+.divSecurityLogoIFrame
+{
+    display: none;
+}
+
+
+/************************************************************/
+/* CUSTOM STYLES FOR MOBILE PAGES                           */
+/************************************************************/
+
+/* styling for cancel button on mobile pages */
+#btnCancelMobile
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/button.png'); /* buttons can have a background image */
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 150px;
+    border: none;
+} 
+
+/* styling for cancel button when mouse hovers */
+#btnCancelMobile:hover
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/button_hover.png');  /* this image makes the button look highlighted */
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 150px;
+    border: none;
+} 
+
+/* styling for submit button on mobile pages */
+#btnSubmitMobile
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/button.png');  /* buttons can have a background image */
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 150px;
+    border: none;
+}
+
+/* styling for submit button when mouse hovers */
+#btnSubmitMobile:hover
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/button_hover.png'); /* this image makes the button look highlighted */
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 150px;
+    border: none;
+}
+
+/* styling for main body of mobile pages */
+body.bodyMobile
+{
+    background-color: White;    
+}
+
+/* styling for the total amount at top of mobile page */
+.divTotalMobileDefault
+{
+    background-color: #a3221c  ;
+    border-radius: 10px;
+    color: White;
+}
+
+/* styling for the text inside of the total amount box */
+.lblTotalAmountMobile
+{
+    color: White;
+}
+
+/* header image for mobile pages */
+#divHeaderImageMobile
+{
+     background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/DgoPizzaHeaderNew.jpg');
+     background-size: 100%;
+     background-repeat: no-repeat;
+     height: 150px; 
+}
+
+
+/************************************************************/
+/* CUSTOM STYLES FOR POS PAGES                              */
+/************************************************************/
+
+/* A header image or style can be added via CSS to POS  pages */
+#divHeaderImagePOS
+{
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/DgoPizzaHeader.jpg');
+    height: 150px;
+}
+
+/* styling for the keypad area */
+.divKeypad
+{
+    margin-top: 70px; /* the keypad can be moved down a bit */    
+}
+
+/* styling for all of the keypad buttons except the '0' button */
+.btnKeypad
+{    
+    font-size: large;
+}
+
+/* styling for the '0' button */
+.btnKeypad0
+{
+    font-size: large;
+}
+
+/* styling for all of the POS buttons */
+.btnDefaultPOS
+{
+    background-color: White;           
+    color:  black;
+    border-left-color: Green;
+    border-right-color: #a3221c;      
+     border-right-width: 30px;
+     border-left-width: 30px;
+     border-top-width: 1px;
+     border-bottom-width: 1px;
+     border-style: solid;
+     margin-right: 20px;
+}
+
+/* Contains the total at the top of the POS page */
+.divTotalPOSDefault 
+{
+    background-color: #a3221c  ;
+    width: 920px; 
+    text-align: center;    
+    margin-top: 10px;    
+    
+}
+
+/* Total Amount Label for POS */
+.lblTotalAmountPOS
+{
+    color: White;
+}
+
+
+/* a and a:hover affect the link to the legal text on all of the pages */
+a
+{
+    color: Gray;
+    font-weight: bold;
+}
+
+a:hover
+{
+    font-weight: bold;
+    color: Black;
+
+}
+
+/* this affects the text styling in the footer on all of the pages */
+.lblFooter
+{
+    color: White;    
+    margin-top: 10px;
+} 
+
+/* popup_container affects the cancel dialog on all the pages */
+#popup_container
+{
+    border-radius: 150px;
+    border-width: 6px;
+    border-color: #fbe599;
+    height: 300px;    
+    padding-top: 40px;
+    background-image:url('http://localhost:4307/HostedCheckout.CSharp/Images/background2.png');
+    font-size: medium;
+     font-weight: bold;
+}
+
+/* 'input' styles the buttons on the cancel dialog */
+#popup_container input:hover
+{
+    background-color: #FaFaFa;
+    border-radius: 3px;  /* border-radius has no effect on IE8.  To see this, view in another browser.  */
+    color: #777777;    
+    border: 1px solid Yellow;
+}
+
+/* styling for the text inside the cancel dialog */
+#popup_content
+{
+    margin-top: 80px;   
+}

@@ -1,0 +1,282 @@
+﻿.label
+{
+	color: White;	
+	font-size: large;
+	
+	
+}
+
+.divLabel
+{
+	background-color: #990000;
+	float: left;
+	text-align: left;
+	width: 98%;
+	
+	margin: 2% 0 1% 2%;
+	padding: 5px 0 5px 5px;
+	border-radius: 0;
+	
+}
+
+.watermarkTextBox
+{
+	width: 99%;
+	border-radius: 0;
+	background-image: -webkit-linear-gradient(#CED7C4, #ffffff);
+	background-image: -moz-linear-gradient(#CED7C4, #ffffff);
+	background-image: -o-linear-gradient(#CED7C4, #ffffff);
+	background-image: linear-gradient(#CED7C4, #ffffff);
+
+}
+
+.normalTextBox
+{
+	border-radius: 0;
+}
+
+
+
+
+.generalError
+{
+
+	color: #990000;
+	
+}
+
+#divProgress
+{
+	width: 50%;
+	height: 45%;
+	margin-top: 30%;
+	margin-left: 12%;
+	background-color: White;
+	border: 1px solid black;
+
+	opacity: 1.0;
+
+	z-index: 10;
+	border-radius: 15em;
+}
+
+#divProgressText
+{	
+	margin-top: 120px;
+	font-weight: bold;
+}
+
+#lblProgress
+{
+	font-size: large;
+
+}
+
+#divProgressImage
+{
+	margin-left: 40px;
+	margin-top: 120px;
+}
+
+
+
+#divTransactionTotal
+{
+	background-color: white;	
+	border: 6px solid #990000;
+	color: #222222;
+	width: 85%;
+	
+
+	background-image: -ms-radial-gradient(center, circle farthest-corner, #F9FAF8 0%, #2E5600 200%);
+
+
+	background-image: -moz-radial-gradient(center, circle farthest-corner, #F9FAF8 0%, #2E5600 200%);
+
+
+	background-image: -o-radial-gradient(center, circle farthest-corner, #F9FAF8 0%, #2E5600 200%);
+
+
+	background-image: -webkit-gradient(radial, center center, 0, center center, 506, color-stop(0, #F9FAF8), color-stop(2, #2E5600));
+
+
+	background-image: -webkit-radial-gradient(center, circle farthest-corner, #F9FAF8 0%, #2E5600 200%);
+
+
+	background-image: radial-gradient(circle farthest-corner at center, #F9FAF8 0%, #2E5600 200%);
+}
+
+body
+{
+	background-color: #eeeeee;
+}
+
+#divExpDate
+{
+	margin-top: -174px;	
+}
+
+#divCardNumber
+{
+	margin-top: 22%;
+}
+
+#divCVVLabel
+{
+    float: left;
+    text-align: center;
+    width: 18%;
+    padding-right: 5px;
+    height: 23px;  
+	margin-top: 3px;	
+	padding-top: 10px;
+}
+
+#divCVVTextBox
+{
+    float: left;
+    text-align: left;    
+    margin-left: 5px;
+    width: 74%;
+    
+}
+
+#lblCVV
+{	
+	font-size: small;
+  
+}
+
+#popup_container
+{
+	background: #990000;
+	border-radius: 14em;
+	border-color: Black;
+	height: 280px;
+		
+}
+
+#popup_panel
+{
+	text-align: center;
+	margin-top: 50px;
+}
+
+
+#popup_message
+{
+	margin-top: 90px;
+	font-size: medium;
+	font-weight: bold;
+	color: White;
+}
+
+#popup_container input
+{
+	margin-right: 5px;
+	padding:  5px 30px 5px 30px;
+	border: 1px solid gray;
+	border-radius: .5em;
+	font-weight: bold;
+	background-image: -webkit-linear-gradient(#aaaaaa, #eeeeee);
+	background-image: -moz-linear-gradient(#aaaaaa, #eeeeee);
+	background-image: -o-linear-gradient(#aaaaaa, #eeeee);
+	background-image: linear-gradient(#aaaaaa, #eeeee);
+
+	
+}
+
+#divHeaderImage
+{
+	display:inherit;
+	width: 100%;
+	height: 90px; 
+	border: none;
+	white-space: nowrap;
+	position: relative;
+	text-align: left;		
+}
+
+#headerImage
+{
+	width: 100%;
+	height: 100%; 
+	background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/DgoPizzaHeader.jpg') ; 
+	background-size: 100%;
+	-webkit-background-size: 100% 100%;         
+	-moz-background-size: 100% 100%;         
+	-o-background-size: 100% 100%;         
+	background-repeat: no-repeat;	
+	display:inherit;
+
+}
+
+
+#btnCancel
+{
+	background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/cancel.png') ; 	
+	background-size: 100% 100%;	
+	background-repeat: no-repeat;
+	border-color: transparent;
+	background-color: transparent;
+	color: #aaaaff;
+	font-size: 1px;
+	float: left;
+	
+}
+
+#btnCancel:hover
+{
+	background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/cancel_hover.png') ; 	
+	
+}
+
+#btnCancel:active
+{
+	margin:  5px 0 0 2px;	
+	padding: 5px 0 0 2px;
+}
+
+#btnPayment
+{
+	float: right;
+}
+
+.button
+{
+    background-color: #990000;
+	color: #ABBB99;
+    height: 32px;
+    font-weight: bold;
+    font-size: medium;
+    width: 45%;
+	 background-image: none;
+    
+}
+
+.button:hover
+{
+    background-color: #BB0000;
+    background-image: none;
+	color: White;
+}
+
+.button:active
+{
+	background-image: none;
+    background-color: #CC0000;
+	font-weight:bold;
+	color: White;
+}
+
+
+#divTransactionTotal
+{
+	margin-top: -20px;
+	
+}
+
+#divTextButtons
+{
+	margin-top: 40px;
+}

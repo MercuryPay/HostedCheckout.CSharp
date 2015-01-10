@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HostedCheckout.CSharp", "..\HostedCheckout.CSharp", "{71AF5137-9CD9-4A8F-A5A0-E331B91A0EBB}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/HostedCheckout.CSharp"
+		Debug.AspNetCompiler.PhysicalPath = "..\HostedCheckout.CSharp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\HostedCheckout.CSharp\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/HostedCheckout.CSharp"
+		Release.AspNetCompiler.PhysicalPath = "..\HostedCheckout.CSharp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\HostedCheckout.CSharp\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4307"
+		VWDDynamicPort = "false"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		MPS_CERT|Any CPU = MPS_CERT|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71AF5137-9CD9-4A8F-A5A0-E331B91A0EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AF5137-9CD9-4A8F-A5A0-E331B91A0EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71AF5137-9CD9-4A8F-A5A0-E331B91A0EBB}.MPS_CERT|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AF5137-9CD9-4A8F-A5A0-E331B91A0EBB}.MPS_CERT|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

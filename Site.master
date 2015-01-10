@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Durango Pizza</title>
+    <link runat="server" id="lnkCSS" href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/demo.js" type="text/javascript"></script>
+    <style runat="server" id="styleInjection" type="text/css"></style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body >
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div style="float: left;">
+                <asp:Image runat="server" ID="imgHeader" ImageUrl="~/Images/DgoPizzaHeader.jpg" />
+            </div>
+            <div class="clear hideSkiplink" style="padding: 0px 0 10px 0px">
+                <asp:Menu ID="mnuMain" runat="server" Font-Size="Large" ForeColor="White" Width="568px"
+                    Orientation="Horizontal" StaticEnableDefaultPopOutImage="false" CssClass="menu">
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="level1" />
+                        <asp:MenuItemStyle CssClass="level2" />
+                    </LevelMenuItemStyles>
+                    <DynamicHoverStyle CssClass="hoverstyle" />
+                    <StaticHoverStyle CssClass="hoverstyle" />
+                    <Items>
+                        <asp:MenuItem runat="server" Text="&nbsp;eCommerce">
+                            <asp:MenuItem runat="server" Text="Payment (Redirect)" NavigateUrl="~/ShoppingCart.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Payment (iFrame)" NavigateUrl="~/ShoppingCartIFrame.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Add Card (Redirect)" NavigateUrl="~/AddCard.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Add Card (iFrame)" NavigateUrl="~/AddCardIFrame.aspx">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem runat="server" Text="POS&nbsp;">
+                            <asp:MenuItem runat="server" Text="Payment (Redirect)" NavigateUrl="~/ShoppingCartPOS.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Payment (iFrame)" NavigateUrl="~/ShoppingCartIFramePOS.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Add Card (Redirect)" NavigateUrl="~/AddCardPOS.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Add Card (iFrame)" NavigateUrl="~/AddCardIFramePOS.aspx">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem runat="server" Text="Mobile&nbsp;" 
+                            NavigateUrl="~/Mobile/mPOS.aspx">
+                            <asp:MenuItem runat="server" Text="Payment" 
+                                NavigateUrl="~/Mobile/mOrder.aspx"></asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Add Card" 
+                                NavigateUrl="~/Mobile/mAddCard.aspx" Value="AddCard">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="POS" Value="POS" NavigateUrl="~/Mobile/mPOS.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem runat="server" Text="Transactions&nbsp">
+                            <asp:MenuItem runat="server" Text="Credit" NavigateUrl="~/TransactionsCredit.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem runat="server" Text="Gift" NavigateUrl="~/TransactionsGift.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem runat="server" Text="CSS" NavigateUrl="CssAdmin/CssAdmin.aspx">                            
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle ForeColor="White"></StaticMenuItemStyle>
+                    <StaticMenuStyle Font-Size="Large"></StaticMenuStyle>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main" >
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

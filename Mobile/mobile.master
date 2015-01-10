@@ -1,0 +1,77 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mobile.master.cs" Inherits="Mobile_mobile" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script type="text/javascript" src="../Scripts/demo.js"></script>
+    <title>Durango Pizza</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, minimum-scale=1, maximum-scale=1" />
+    <link href="../App_Themes/MobileEComm/MobileEComm.css" rel="stylesheet" type="text/css"
+        media="only screen and (max-width: 480px)" />
+    <asp:ContentPlaceHolder ID="cphHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <img src="../Images/DgoPizzaHeader.jpg" width="100%" />
+    <asp:Menu ID="Menu1" runat="server" Font-Size="x-small" ForeColor="White" BackColor="#A3221C"
+        Width="100%" Orientation="Horizontal" StaticEnableDefaultPopOutImage="false"
+        CssClass="menu">
+        <LevelMenuItemStyles>
+            <asp:MenuItemStyle CssClass="level1" />
+            <asp:MenuItemStyle CssClass="level2" />
+        </LevelMenuItemStyles>
+        <DynamicHoverStyle CssClass="hoverstyle" />
+        <StaticHoverStyle CssClass="hoverstyle" />
+        <Items>
+            <asp:MenuItem runat="server" Text="&nbsp;eCommerce">
+                <asp:MenuItem Text="Payment (Redirect)" Value="Payment (Redirect)" NavigateUrl="~/ShoppingCart.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem runat="server" Text="Payment (iFrame)" NavigateUrl="~/ShoppingCartIFrame.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem runat="server" Text="Add Card (Redirect)" NavigateUrl="~/AddCard.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem runat="server" Text="Add Card (iFrame)" NavigateUrl="~/AddCardIFrame.aspx">
+                </asp:MenuItem>
+            </asp:MenuItem>
+            <asp:MenuItem runat="server" Text="POS&nbsp;">
+                <asp:MenuItem runat="server" Text="Payment (Redirect)" NavigateUrl="~/ShoppingCartPOS.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem runat="server" Text="Payment (iFrame)" NavigateUrl="~/ShoppingCartIFramePOS.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem runat="server" Text="Add Card (Redirect)" NavigateUrl="~/AddCardPOS.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem runat="server" Text="Add Card (iFrame)" NavigateUrl="~/AddCardIFramePOS.aspx">
+                </asp:MenuItem>
+            </asp:MenuItem>
+            <asp:MenuItem runat="server" Text="Mobile&nbsp;">
+            <%--    <asp:MenuItem Text="Mobile POS" Value="MobilePOSDefault" NavigateUrl="~/Mobile/mPOS.aspx">
+                </asp:MenuItem>--%>
+                <asp:MenuItem runat="server" Text="Payment " 
+                    NavigateUrl="~/Mobile/mOrder.aspx" Value="Payment" Selected="True">
+                </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Mobile/mAddCard.aspx" Text="Add Card" 
+                    Value="Add Card (Redirect)"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Mobile/mPOS.aspx" Text="POS" Value="POS">
+                </asp:MenuItem>
+            </asp:MenuItem>
+            <asp:MenuItem runat="server" Text="Transactions">
+                <asp:MenuItem runat="server" Text="Credit" NavigateUrl="~/TransactionsCredit.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem runat="server" Text="Gift" NavigateUrl="~/TransactionsGift.aspx"></asp:MenuItem>
+            </asp:MenuItem>
+            <asp:MenuItem runat="server" Text="CSS" NavigateUrl="~/CssAdmin/CssAdmin.aspx"></asp:MenuItem>
+        </Items>
+        <StaticMenuItemStyle ForeColor="White"></StaticMenuItemStyle>
+        <StaticMenuStyle Font-Size="Large"></StaticMenuStyle>
+    </asp:Menu>
+    <br />
+    <br />
+    <div>
+        <asp:ContentPlaceHolder ID="cphBody" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

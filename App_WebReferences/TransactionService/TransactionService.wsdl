@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mercurypay.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mercurypay.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mercurypay.com/">
+      <s:element name="CreditPreAuthToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditPreAuthToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditPreAuthToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PartialAuth" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="CreditTransactionBase" />
+      <s:element name="CreditPreAuthTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditPreAuthTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AcqRefData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AVSResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVVResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthorizeAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProcessData" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="GratuityAmount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreditPreAuthCaptureToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditPreAuthCaptureToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditPreAuthCaptureToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="AuthorizeAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="GratuityAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="TaxAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AcqRefData" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreditPreAuthCaptureTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditPreAuthCaptureTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditSaleToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditSaleToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditSaleToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="TaxAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PartialAuth" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreditSaleTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditSaleTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditVoidSaleToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditVoidSaleToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditVoidSaleToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProcessData" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AcqRefData" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreditVoidSaleTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditVoidSaleTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditReturnToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditReturnToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditReturnToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreditReturnTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditReturnTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditVoidReturnToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditVoidReturnToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditVoidReturnToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreditVoidReturnTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditVoidReturnTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditReversalToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditReversalToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditReversalToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProcessData" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AcqRefData" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreditReversalTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditReversalTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditAdjustToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreditAdjustToken" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditAdjustToken">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:CreditTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="GratuityAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="LaneID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreditAdjustTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditAdjustTokenResult" type="tns:CreditResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchClear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:BatchClear" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchClear">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AdminTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AdminTransactionBase" />
+      <s:element name="BatchClearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BatchClearResult" type="tns:BatchClearResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchClearResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BatchClose">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:BatchClose" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchClose">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AdminTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BatchNo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="BatchItemCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NetBatchTotal" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditPurchaseCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditPurchaseAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditReturnCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditReturnAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="DebitPurchaseCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DebitPurchaseAmount" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="DebitReturnCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DebitReturnAmount" type="s:double" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="BatchCloseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BatchCloseResult" type="tns:BatchCloseResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchCloseResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchItemCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetBatchTotal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditPurchaseCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditPurchaseAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditReturnCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditReturnAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitPurchaseCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitPurchaseAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitReturnCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitReturnAmount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BatchSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:BatchSummary" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchSummary">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AdminTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="BatchSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BatchSummaryResult" type="tns:BatchSummaryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchSummaryResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchItemCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NetBatchTotal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditPurchaseCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditPurchaseAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditReturnCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditReturnAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitPurchaseCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitPurchaseAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitReturnCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitReturnAmount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreditPreAuthTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditPreAuthToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditPreAuthTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditPreAuthTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditPreAuthCaptureTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditPreAuthCaptureToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditPreAuthCaptureTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditPreAuthCaptureTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditSaleTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditSaleToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditSaleTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditSaleTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditVoidSaleTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditVoidSaleToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditVoidSaleTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditVoidSaleTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditReturnTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditReturnToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditReturnTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditReturnTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditVoidReturnTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditVoidReturnToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditVoidReturnTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditVoidReturnTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditReversalTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditReversalToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditReversalTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditReversalTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditAdjustTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditAdjustToken" />
+  </wsdl:message>
+  <wsdl:message name="CreditAdjustTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditAdjustTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="BatchClearSoapIn">
+    <wsdl:part name="parameters" element="tns:BatchClear" />
+  </wsdl:message>
+  <wsdl:message name="BatchClearSoapOut">
+    <wsdl:part name="parameters" element="tns:BatchClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="BatchCloseSoapIn">
+    <wsdl:part name="parameters" element="tns:BatchClose" />
+  </wsdl:message>
+  <wsdl:message name="BatchCloseSoapOut">
+    <wsdl:part name="parameters" element="tns:BatchCloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="BatchSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:BatchSummary" />
+  </wsdl:message>
+  <wsdl:message name="BatchSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:BatchSummaryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TransactionServiceSoap">
+    <wsdl:operation name="CreditPreAuthToken">
+      <wsdl:input message="tns:CreditPreAuthTokenSoapIn" />
+      <wsdl:output message="tns:CreditPreAuthTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditPreAuthCaptureToken">
+      <wsdl:input message="tns:CreditPreAuthCaptureTokenSoapIn" />
+      <wsdl:output message="tns:CreditPreAuthCaptureTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditSaleToken">
+      <wsdl:input message="tns:CreditSaleTokenSoapIn" />
+      <wsdl:output message="tns:CreditSaleTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditVoidSaleToken">
+      <wsdl:input message="tns:CreditVoidSaleTokenSoapIn" />
+      <wsdl:output message="tns:CreditVoidSaleTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditReturnToken">
+      <wsdl:input message="tns:CreditReturnTokenSoapIn" />
+      <wsdl:output message="tns:CreditReturnTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditVoidReturnToken">
+      <wsdl:input message="tns:CreditVoidReturnTokenSoapIn" />
+      <wsdl:output message="tns:CreditVoidReturnTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditReversalToken">
+      <wsdl:input message="tns:CreditReversalTokenSoapIn" />
+      <wsdl:output message="tns:CreditReversalTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditAdjustToken">
+      <wsdl:input message="tns:CreditAdjustTokenSoapIn" />
+      <wsdl:output message="tns:CreditAdjustTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchClear">
+      <wsdl:input message="tns:BatchClearSoapIn" />
+      <wsdl:output message="tns:BatchClearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchClose">
+      <wsdl:input message="tns:BatchCloseSoapIn" />
+      <wsdl:output message="tns:BatchCloseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchSummary">
+      <wsdl:input message="tns:BatchSummarySoapIn" />
+      <wsdl:output message="tns:BatchSummarySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransactionServiceSoap" type="tns:TransactionServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreditPreAuthToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditPreAuthToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditPreAuthCaptureToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditPreAuthCaptureToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditSaleToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditSaleToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditVoidSaleToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditVoidSaleToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditReturnToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditReturnToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditVoidReturnToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditVoidReturnToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditReversalToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditReversalToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditAdjustToken">
+      <soap:operation soapAction="http://www.mercurypay.com/CreditAdjustToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchClear">
+      <soap:operation soapAction="http://www.mercurypay.com/BatchClear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchClose">
+      <soap:operation soapAction="http://www.mercurypay.com/BatchClose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchSummary">
+      <soap:operation soapAction="http://www.mercurypay.com/BatchSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransactionServiceSoap12" type="tns:TransactionServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreditPreAuthToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditPreAuthToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditPreAuthCaptureToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditPreAuthCaptureToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditSaleToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditSaleToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditVoidSaleToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditVoidSaleToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditReturnToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditReturnToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditVoidReturnToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditVoidReturnToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditReversalToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditReversalToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditAdjustToken">
+      <soap12:operation soapAction="http://www.mercurypay.com/CreditAdjustToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchClear">
+      <soap12:operation soapAction="http://www.mercurypay.com/BatchClear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchClose">
+      <soap12:operation soapAction="http://www.mercurypay.com/BatchClose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchSummary">
+      <soap12:operation soapAction="http://www.mercurypay.com/BatchSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransactionService">
+    <wsdl:port name="TransactionServiceSoap" binding="tns:TransactionServiceSoap">
+      <soap:address location="http://localhost:62373/TransactionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransactionServiceSoap12" binding="tns:TransactionServiceSoap12">
+      <soap12:address location="http://localhost:62373/TransactionService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

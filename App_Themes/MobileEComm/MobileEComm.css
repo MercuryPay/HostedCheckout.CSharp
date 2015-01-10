@@ -1,0 +1,158 @@
+﻿body
+{
+    font-family: sans-serif;
+    font-size: medium;
+    color: #696969;
+}
+table.summary
+{
+    width: 98%;
+}
+td.columnHeader
+{
+    border-bottom: 1px solid #990000;
+    background-color:#990000;
+    color:White;
+
+}
+td.total
+{
+    font-weight: bold;
+    border-top: 1px solid #990000;
+}
+div.pageHeader
+{
+    font-size: small;
+    font-weight: bold;    
+    color: black;
+    padding: 5px 5px 5px 5px;
+    width: 98%;
+}
+div.pageSubHeader
+{
+    font-style: italic;
+    font-weight: bold;
+    width:98%;
+}
+div.separator
+{
+    height: 2px;
+    background-color: #990000;
+    width:98%;
+}
+div.fieldLabel
+{
+    margin-bottom: 2px;
+    width: 100%;
+    background-color: #990000;
+    color: White;
+}
+
+div.hotSpot
+{
+    margin: 20px 0px 20px 0px;
+}
+
+input
+{
+    width: 100%;
+    height: 44px;
+}
+
+select
+{
+    width: 100%;
+    height: 44px;
+}
+
+
+a
+{
+    color: #990000;
+}
+
+a:hover
+{
+    color:  #FFDD00;
+    text-decoration: none;
+}
+
+.ErrorLabel
+{
+color:#cc0000;
+font-size:medium;
+}
+
+.level1
+{
+    color: #dddddd !important;    
+    font-size:  medium !important;    
+    font-weight: bold;
+    background-color: #A3221C !important;
+}
+
+
+.level2
+{    	
+    font-size: medium !important;
+    background-color: #aaaaaa !important;
+    padding: 5px 10px 10px 10px;
+}
+
+.hoverstyle
+{
+	color:  #FFDD00 !important;
+}
+
+.menu
+{
+	color: White;		
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.divLabelStyle
+{
+	background-color: #990000;
+	float: left;
+	text-align: left;
+	width: 98%;
+	margin: 2% 0 1% 2%;
+	padding: 5px 0 5px 5px;
+}
+
+.label
+{
+	color: White;	
+	font-size: large;
+}
+
+.button
+{
+    background-color: #990000;
+    color: White;
+    height: 35px;
+    font-weight: bold;
+    width: 81%;
+     border-radius:0.5em 0.5em 0.5em 0.5em;
+}
+
+.buttonHover
+{
+    background-color: #990000;
+    color: White;
+    height: 44px;
+    font-weight: bold;
+    width: 80%;
+}
+
+.buttonClick
+{
+    background-color: #990000;
+    color: White;
+    height: 44px;
+    font-weight: bold;
+    width: 75%;
+}
+
+

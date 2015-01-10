@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mercurypay.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mercurypay.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mercurypay.com/">
+      <s:element name="GiftSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftSale" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftSale">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PartialAuth" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="GiftTransactionBase" />
+      <s:element name="GiftSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftSaleResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthorizeAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BalanceAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVVResult" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GiftIssue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftIssue" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftIssue">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftIssueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftIssueResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiftBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftBalance" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftBalance">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftBalanceResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiftReload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftReload" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftReload">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftReloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftReloadResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiftVoidReload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftVoidReload" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftVoidReload">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftVoidReloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftVoidReloadResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiftVoidIssue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftVoidIssue" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftVoidIssue">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftVoidIssueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftVoidIssueResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiftVoidSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftVoidSale" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftVoidSale">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftVoidSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftVoidSaleResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiftVoidReturn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftVoidReturn" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftVoidReturn">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftVoidReturnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftVoidReturnResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiftReturn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GiftReturn" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GiftReturn">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:GiftTransactionBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PurchaseAmount" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Track" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Invoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TerminalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GiftReturnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftReturnResult" type="tns:GiftResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GiftSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftSale" />
+  </wsdl:message>
+  <wsdl:message name="GiftSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftIssueSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftIssue" />
+  </wsdl:message>
+  <wsdl:message name="GiftIssueSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftIssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftBalance" />
+  </wsdl:message>
+  <wsdl:message name="GiftBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftReloadSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftReload" />
+  </wsdl:message>
+  <wsdl:message name="GiftReloadSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftReloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidReloadSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftVoidReload" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidReloadSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftVoidReloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidIssueSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftVoidIssue" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidIssueSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftVoidIssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftVoidSale" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftVoidSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidReturnSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftVoidReturn" />
+  </wsdl:message>
+  <wsdl:message name="GiftVoidReturnSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftVoidReturnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GiftReturnSoapIn">
+    <wsdl:part name="parameters" element="tns:GiftReturn" />
+  </wsdl:message>
+  <wsdl:message name="GiftReturnSoapOut">
+    <wsdl:part name="parameters" element="tns:GiftReturnResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TransactionServiceGiftSoap">
+    <wsdl:operation name="GiftSale">
+      <wsdl:input message="tns:GiftSaleSoapIn" />
+      <wsdl:output message="tns:GiftSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftIssue">
+      <wsdl:input message="tns:GiftIssueSoapIn" />
+      <wsdl:output message="tns:GiftIssueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftBalance">
+      <wsdl:input message="tns:GiftBalanceSoapIn" />
+      <wsdl:output message="tns:GiftBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftReload">
+      <wsdl:input message="tns:GiftReloadSoapIn" />
+      <wsdl:output message="tns:GiftReloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidReload">
+      <wsdl:input message="tns:GiftVoidReloadSoapIn" />
+      <wsdl:output message="tns:GiftVoidReloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidIssue">
+      <wsdl:input message="tns:GiftVoidIssueSoapIn" />
+      <wsdl:output message="tns:GiftVoidIssueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidSale">
+      <wsdl:input message="tns:GiftVoidSaleSoapIn" />
+      <wsdl:output message="tns:GiftVoidSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidReturn">
+      <wsdl:input message="tns:GiftVoidReturnSoapIn" />
+      <wsdl:output message="tns:GiftVoidReturnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GiftReturn">
+      <wsdl:input message="tns:GiftReturnSoapIn" />
+      <wsdl:output message="tns:GiftReturnSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransactionServiceGiftSoap" type="tns:TransactionServiceGiftSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GiftSale">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftIssue">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftIssue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftBalance">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftReload">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftReload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidReload">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftVoidReload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidIssue">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftVoidIssue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidSale">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftVoidSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidReturn">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftVoidReturn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftReturn">
+      <soap:operation soapAction="http://www.mercurypay.com/GiftReturn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransactionServiceGiftSoap12" type="tns:TransactionServiceGiftSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GiftSale">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftIssue">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftIssue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftBalance">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftReload">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftReload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidReload">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftVoidReload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidIssue">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftVoidIssue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidSale">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftVoidSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftVoidReturn">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftVoidReturn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GiftReturn">
+      <soap12:operation soapAction="http://www.mercurypay.com/GiftReturn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransactionServiceGift">
+    <wsdl:port name="TransactionServiceGiftSoap" binding="tns:TransactionServiceGiftSoap">
+      <soap:address location="http://hc.prod.soft.dev/transactionwebservice/transactionservicegift.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransactionServiceGiftSoap12" binding="tns:TransactionServiceGiftSoap12">
+      <soap12:address location="http://hc.prod.soft.dev/transactionwebservice/transactionservicegift.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
