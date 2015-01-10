@@ -48,7 +48,7 @@ response = hcWS.InitializePayment(hcRequest);
 
 ###Parse: Response
 
-'''
+```
 if (response != null)
 {
   if (response.ResponseCode == 0)  //success
@@ -56,6 +56,8 @@ if (response != null)
     var paymentId = response.PaymentID;
   }
 }
+
+```
 
 ##Step 2: Display HostedCheckout
 
