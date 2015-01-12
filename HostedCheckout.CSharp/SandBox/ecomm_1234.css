@@ -11,7 +11,7 @@ body.bodyECommRedirect
 /* header image using CSS */
 #divHeaderImage
 {
-    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/Dancing_bear.gif');
+    background-image: url('http://localhost:4307/HostedCheckout.CSharp/Images/dgopizzaheader.jpg');
     background-repeat: repeat-x;
     height: 150px;
 }
