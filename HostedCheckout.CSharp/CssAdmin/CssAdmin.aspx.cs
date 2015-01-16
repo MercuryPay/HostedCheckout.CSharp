@@ -199,8 +199,9 @@ public partial class CssAdmin_CssAdmin : System.Web.UI.Page
 
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(cssUrl);
             req.Method = "GET";
-            req.Headers.Add("Accept-Encoding: gzip,deflate,sdch");
-            HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+            req.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+
+            HttpWebResponse response = (HttpWebResponse)req.GetResponse();            
 
             using (StreamReader reader = new StreamReader(response.GetResponseStream()))
             {
