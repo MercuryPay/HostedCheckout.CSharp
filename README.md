@@ -1,6 +1,8 @@
 HostedCheckout.CSharp
 ====================
 
+This demo site is hosted at:  http://durangopizzahc.azurewebsites.net
+
 Visual Studio asp.net website application that shows many features of our Hosted Checkout platform.
 
 >There are 3 steps to process a payment with Mercury's Hosted Checkout platform.
