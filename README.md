@@ -1,8 +1,6 @@
 HostedCheckout.CSharp
 ====================
 
-This demo site is hosted at:  http://durangopizzahc.azurewebsites.net
-
 Visual Studio asp.net website application that shows many features of our Hosted Checkout platform.
 
 <a href="https://developer.vantiv.com/?utm_campaign=githubcta&utm_medium=hyperlink&utm_source=github&utm_content=codingforcommerce">Are you coding for commerce? Connect with our experts on Worldpay ONE.</a>
